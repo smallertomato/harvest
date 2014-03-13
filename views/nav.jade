@@ -1,0 +1,37 @@
+.page
+  .nav-bar(style="background-color: rgba(0, 0, 0,0.5);")
+    .nav-bar-inner.padding10
+      span.pull-menu"
+      a(href="/")
+        span.element.brand
+          | Harvest.io 
+          small 0.0.1
+      .divider
+      ul.menu(style="float: right;margin-right: 60px;")
+              li(data-role="dropdown")
+                <i class="icon-reddit"></i>
+                | Welcome&nbsp;&nbsp;
+                a(href="#", style="float: none; display: inline", id="uuap") #{user}
+                ul.dropdown-menu
+                  li
+                    a(href="/logout") logout
+      ul.menu
+        li(id="Home")
+          a(href="/")
+            i.icon-home
+            | Home
+        li(id="Doc")  
+          a(href="/doc/index")
+            i.icon-book
+            | Doc
+        li(id="Manage")
+          a(href="/manage/Public/baidu")
+            i.icon-grid-view
+            | Manage
+      .divider
+      ul.menu
+        li(id="Create")
+          a(href="/edit")
+            i.icon-puzzle
+            | Create
+script(src="/lib/metro/javascript/dropdown.js")

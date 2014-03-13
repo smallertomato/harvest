@@ -1,0 +1,12 @@
+.menu li{
+    color: white;
+}
+
+ul.menu {
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace, sans-serif;"
+}
+th {
+	-webkit-user-select: none;
+}

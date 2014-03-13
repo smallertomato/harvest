@@ -1,0 +1,205 @@
+<h3>
+<a name="traversing" class="anchor" href="#traversing"><span class="octicon octicon-link"></span></a>Traversing</h3>
+
+<h4>
+<a name="findselector" class="anchor" href="#findselector"><span class="octicon octicon-link"></span></a>.find(selector)</h4>
+
+<p>Get a set of descendants filtered by <code>selector</code> of each element in the current set of matched elements.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">length</span>
+<span class="c1">//=&gt; 3</span>
+</pre></div>
+
+<h4>
+<a name="parentselector" class="anchor" href="#parentselector"><span class="octicon octicon-link"></span></a>.parent([selector])</h4>
+
+<p>Get the parent of each element in the current set of matched elements, optionally filtered by a selector.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span>
+<span class="c1">//=&gt; fruits</span>
+</pre></div>
+
+<h4>
+<a name="parentsselector" class="anchor" href="#parentsselector"><span class="octicon octicon-link"></span></a>.parents([selector])</h4>
+
+<p>Get a set of parents filtered by <code>selector</code> of each element in the current set of match elements.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">parents</span><span class="p">().</span><span class="nx">length</span>
+<span class="c1">// =&gt; 2</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">parents</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">length</span>
+<span class="c1">// =&gt; 1</span>
+</pre></div>
+
+<h4>
+<a name="closestselector" class="anchor" href="#closestselector"><span class="octicon octicon-link"></span></a>.closest(selector)</h4>
+
+<p>For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">closest</span><span class="p">()</span>
+<span class="c1">// =&gt; []</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">closest</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">)</span>
+<span class="c1">// =&gt; []</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">closest</span><span class="p">(</span><span class="s1">'li'</span><span class="p">)</span>
+<span class="c1">// =&gt; [&lt;li class="orange"&gt;Orange&lt;/li&gt;]</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">closest</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">)</span>
+<span class="c1">// =&gt; [&lt;ul id="fruits"&gt; ... &lt;/ul&gt;]</span>
+</pre></div>
+
+<h4>
+<a name="next" class="anchor" href="#next"><span class="octicon octicon-link"></span></a>.next()</h4>
+
+<p>Gets the next sibling of the first selected element.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">).</span><span class="nx">next</span><span class="p">().</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">'orange'</span><span class="p">)</span>
+<span class="c1">//=&gt; true</span>
+</pre></div>
+
+<h4>
+<a name="nextall" class="anchor" href="#nextall"><span class="octicon octicon-link"></span></a>.nextAll()</h4>
+
+<p>Gets all the following siblings of the first selected element.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">()</span>
+<span class="c1">//=&gt; [&lt;li class="orange"&gt;Orange&lt;/li&gt;, &lt;li class="pear"&gt;Pear&lt;/li&gt;]</span>
+</pre></div>
+
+<h4>
+<a name="prev" class="anchor" href="#prev"><span class="octicon octicon-link"></span></a>.prev()</h4>
+
+<p>Gets the previous sibling of the first selected element.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">prev</span><span class="p">().</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">'apple'</span><span class="p">)</span>
+<span class="c1">//=&gt; true</span>
+</pre></div>
+
+<h4>
+<a name="prevall" class="anchor" href="#prevall"><span class="octicon octicon-link"></span></a>.prevAll()</h4>
+
+<p>Gets all the preceding siblings of the first selected element.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">prevAll</span><span class="p">()</span>
+<span class="c1">//=&gt; [&lt;li class="orange"&gt;Orange&lt;/li&gt;, &lt;li class="apple"&gt;Apple&lt;/li&gt;]</span>
+</pre></div>
+
+<h4>
+<a name="slice-start-end-" class="anchor" href="#slice-start-end-"><span class="octicon octicon-link"></span></a>.slice( start, [end] )</h4>
+
+<p>Gets the elements matching the specified range</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>
+<span class="c1">//=&gt; 'Orange'</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">length</span>
+<span class="c1">//=&gt; 1</span>
+</pre></div>
+
+<h4>
+<a name="siblings-selector-" class="anchor" href="#siblings-selector-"><span class="octicon octicon-link"></span></a>.siblings( selector )</h4>
+
+<p>Gets the first selected element's siblings, excluding itself.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">siblings</span><span class="p">().</span><span class="nx">length</span>
+<span class="c1">//=&gt; 2</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">siblings</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">length</span>
+<span class="c1">//=&gt; 1</span>
+
+</pre></div>
+
+<h4>
+<a name="children-selector-" class="anchor" href="#children-selector-"><span class="octicon octicon-link"></span></a>.children( selector )</h4>
+
+<p>Gets the children of the first selected element.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">children</span><span class="p">().</span><span class="nx">length</span>
+<span class="c1">//=&gt; 3</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">children</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>
+<span class="c1">//=&gt; Pear</span>
+</pre></div>
+
+<h4>
+<a name="contents" class="anchor" href="#contents"><span class="octicon octicon-link"></span></a>.contents()</h4>
+
+<p>Gets the children of each element in the set of matched elements, including text and comment nodes.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">contents</span><span class="p">().</span><span class="nx">length</span>
+<span class="c1">//=&gt; 3</span>
+</pre></div>
+
+<h4>
+<a name="each-functionindex-element-" class="anchor" href="#each-functionindex-element-"><span class="octicon octicon-link"></span></a>.each( function(index, element) )</h4>
+
+<p>Iterates over a cheerio object, executing a function for each matched element. When the callback is fired, the function is fired in the context of the DOM element, so <code>this</code> refers to the current element, which is equivalent to the function parameter <code>element</code>. To break out of the <code>each</code> loop early, return with <code>false</code>.</p>
+
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">fruits</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">elem</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">fruits</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="nx">fruits</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">);</span>
+<span class="c1">//=&gt; Apple, Orange, Pear</span>
+</pre></div>
+
+<h4>
+<a name="map-functionindex-element-" class="anchor" href="#map-functionindex-element-"><span class="octicon octicon-link"></span></a>.map( function(index, element) )</h4>
+
+<p>Iterates over a cheerio object, executing a function for each selected element. Map will return an <code>array</code> of return values from each of the functions it iterated over. The function is fired in the context of the DOM element, so <code>this</code> refers to the current element, which is equivalent to the function parameter <code>element</code>.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// this === el</span>
+  <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'class'</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">);</span>
+<span class="c1">//=&gt; apple, orange, pear</span>
+</pre></div>
+
+<h4>
+<a name="filter-selector---filter-selection---filter-element---filter-functionindex-" class="anchor" href="#filter-selector---filter-selection---filter-element---filter-functionindex-"><span class="octicon octicon-link"></span></a>.filter( selector ) <br> .filter( selection ) <br> .filter( element ) <br> .filter( function(index) )</h4>
+
+<p>Iterates over a cheerio object, reducing the set of selector elements to those that match the selector or pass the function's test. When a Cheerio selection is specified, return only the elements contained in that selection. When an element is specified, return only that element (if it is contained in the original selection). If using the function method, the function is executed in the context of the selected element, so <code>this</code> refers to the current element.</p>
+
+<p>Selector:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'class'</span><span class="p">);</span>
+<span class="c1">//=&gt; orange</span>
+</pre></div>
+
+<p>Function:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// this === el</span>
+  <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'class'</span><span class="p">)</span> <span class="o">===</span> <span class="s1">'orange'</span><span class="p">;</span>
+<span class="p">}).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'class'</span><span class="p">)</span>
+<span class="c1">//=&gt; orange</span>
+</pre></div>
+
+<h4>
+<a name="first" class="anchor" href="#first"><span class="octicon octicon-link"></span></a>.first()</h4>
+
+<p>Will select the first element of a cheerio object</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">children</span><span class="p">().</span><span class="nx">first</span><span class="p">().</span><span class="nx">text</span><span class="p">()</span>
+<span class="c1">//=&gt; Apple</span>
+</pre></div>
+
+<h4>
+<a name="last" class="anchor" href="#last"><span class="octicon octicon-link"></span></a>.last()</h4>
+
+<p>Will select the last element of a cheerio object</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">children</span><span class="p">().</span><span class="nx">last</span><span class="p">().</span><span class="nx">text</span><span class="p">()</span>
+<span class="c1">//=&gt; Pear</span>
+</pre></div>
+
+<h4>
+<a name="eq-i-" class="anchor" href="#eq-i-"><span class="octicon octicon-link"></span></a>.eq( i )</h4>
+
+<p>Reduce the set of matched elements to the one at the specified index. Use <code>.eq(-i)</code> to count backwards from the last selected element.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>
+<span class="c1">//=&gt; Apple</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>
+<span class="c1">//=&gt; Pear</span>
+</pre></div>

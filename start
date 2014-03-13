@@ -1,0 +1,10 @@
+#!/bin/bash
+FOREVER=~/runtime/forever/bin/forever
+CORES=5
+BASE_PORT=8600
+for i in `seq 1 $CORES`;
+do
+	let "port=i+$BASE_PORT"
+	$FOREVER start app.js -p $port
+done
+$FOREVER list

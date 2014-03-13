@@ -1,0 +1,49 @@
+link(href="/css/normalize.css",rel="stylesheet")
+link(href="/css/component.css",rel="stylesheet")
+script(src="/js/modernizr.custom.js")
+.metrouicss
+  .nav-bar(style="background-color:#3D6AA2")
+    .nav-bar-inner.padding10
+      span.pull-menu"
+      a(href="/")
+        span.element.brand
+          | Harvest.io 
+          small 0.0.1
+      .divider
+
+      ul.menu
+        li(id="Run")
+          <i class="icon-play"></i>
+          | Run
+        li(id="Save")
+          <i class="icon-save"></i> 
+          | Save
+        li(id="TidyUp")
+          <i class="icon-shit"></i>
+          | TidyUp
+        li(id="JSHint")
+          <i class="icon-checkmark"></i>
+          | JSHint
+      .divider.Splitter
+      ul.menu
+        li(id="Config")
+          <i class="icon-cog"></i>
+          | Config
+        li(id="Manage")
+          a(href="/manage/Public/baidu")
+            i.icon-grid-view
+            | Manage
+      ul.menu(style="float: right;margin-right: 60px;")
+        li(data-role="dropdown")
+          <i class="icon-reddit"></i>
+          | Welcome&nbsp;&nbsp;
+          a(href="#", style="float: none; display: inline", id="uuap") #{user}
+          ul.dropdown-menu
+            li
+              a(href="/logout") logout
+      include gn-menu.html
+script(src="/js/classie.js")
+script(src="/js/gnmenu.js")
+script.
+  new gnMenu( document.getElementById( 'gn-menu' ) );
+script(src="/lib/metro/javascript/dropdown.js")

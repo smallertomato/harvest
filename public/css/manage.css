@@ -1,0 +1,9 @@
+th {
+	text-align: center !important;
+}
+li.liselected {
+	background-color: rgba(20, 60, 167, 0.6) !important;
+}
+li.liselected a {
+	color: white !important;
+}

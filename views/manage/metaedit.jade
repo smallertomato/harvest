@@ -1,0 +1,45 @@
+form(id="metaedit", action="/metaedit/" + template._id ,method="post")
+  .grid.span6
+    .row
+      .span2(style="line-height: 30px;")
+        h3 template name
+      .span4.input-control.text
+        input(name="name", type="text", value=template.name)
+    .row
+      .span2(style="line-height: 30px;")
+        h3 simple url
+      .span4.input-control.text
+        input(name="simple_url", type="text", value=unescape(template.simple_url))
+    .row
+      .span2(style="line-height: 30px;")
+        h3 page encoding
+      .span4.input-control.select
+        select(name="ie")
+          option utf8
+    .row
+      .span2(style="line-height: 30px;")
+        h3 page type
+      .span4.input-control.select
+        select(name="pageType")
+          option(value="html") html
+          -if (template.type === "json")
+            option(value="json", selected) json
+          option(value="json") json
+    .row
+      h3 description
+      .input-control.textarea
+        textarea(name="description", placeholder="Input text here...")
+          | #{template.description}
+    .row
+      h3 authors&nbsp;&nbsp;
+        small (please use "," split names)
+      .input-control.textarea
+        textarea(name="authors", placeholder="Input text here...")
+          | #{template.authors}
+    .row
+      label.input-control.switch
+        -if (template.available === "true")
+          input(name="available", id="code_mode", type="checkbox", checked)
+        -else
+          input(name="available", id="code_mode", type="checkbox")
+        span.helper available

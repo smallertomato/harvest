@@ -1,0 +1,34 @@
+/**
+ * Harvest
+ * Copyright(c) 2013 Chao Liu <chaoliu.neu@gmail.com>
+ * MIT Licensed
+ */
+
+// change the file name to global.js
+module.exports = {
+    "production": {
+        "redis": {
+            host: '',
+            port: ''
+        },
+        "mongodb": 'mongodb://',
+        "cas": {
+            cas_host: '',
+            service: ''
+        },
+        "admin": []
+    },
+
+    "development": {
+        "redis": {
+            host: '',
+            port: ''
+        },
+        "mongodb": 'mongodb://',
+        "cas": {
+            cas_host: '',
+            service: ''
+        },
+        "admin": []
+    }
+};

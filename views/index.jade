@@ -1,0 +1,44 @@
+include header.jade
+link(href="css/index.css",rel="stylesheet")
+link(href="css/common.css",rel="stylesheet")
+body.metrouicss(style="background-image:url('img/homepage-bg.jpg')")
+  include nav
+  .page
+    .page-header
+      .page-header-content
+ 
+    .page-region
+      .page-region-content
+        .grid
+          .row
+            #descript(class="span6")
+              h2(style="color: white") 
+                | Fast, flexible html parse platform. With lean implementation of core jQuery
+                | , you can easily create your parse template.
+              div
+                .row
+                  a.button.big(href="/doc/get-start") Get start
+                  a.button.big(href="/edit") Create a template
+            #video_container(class="span6")
+              video(autoplay,loop, controls, style="width:100%")
+                source(src="video/sintel.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+                source(src="video/sintel.ogv", type='video/ogg; codecs="theora, vorbis"')
+        .grid
+          .row
+            .span4.bg-color-blue
+                img.place-right(src="img/simple.png", style="margin: 10px;")
+                h2.fg-color-white &nbsp;Simple
+            .span4.bg-color-green
+                img.place-right(src="img/grid.png", style="margin: 10px;")
+                h2.fg-color-white &nbsp;Sufficient
+            .span4.bg-color-yellow
+                img.place-right(src="img/responsive.png", style="margin: 10px;")
+                h2.fg-color-white &nbsp;Fast
+        .grid
+          .row
+            .span4.bg-color-lighten(style="height:200px")
+              p.text-center TODO
+            .span4.bg-color-lighten(style="height:200px")
+              p.text-center TODO
+            .span4.bg-color-lighten(style="height:200px")
+              p.text-center TODO

@@ -1,0 +1,29 @@
+table.hovered
+  thead
+    tr
+      th Index
+      th Name
+      th Creator
+      th Available
+      th Operation
+  tbody
+    -var index = 0;
+    each template in templates
+      -var time = (new Date(template.utime)).toLocaleDateString()
+      -index++;
+      tr(id=template._id)
+        td= index
+        td #{template.name}
+        td #{template.creator}
+        td #{template.available}
+        td.center
+          button.image-button.bg-color-blue.fg-color-white(style="margin-bottom: 0px", data-role="preview", href=template._id)
+            | preview
+            i.icon-wrench.bg-color-red
+          button.image-button.bg-color-blue.fg-color-white(style="margin-bottom: 0px", data-role="edit", href=template._id)
+            | Edit
+            i.icon-loop.bg-color-red
+          button.image-button.bg-color-blue.fg-color-white(style="margin-bottom: 0px", data-role="remove", href=template._id)
+            | Remove
+            i.icon-remove.bg-color-red
+  tfoot

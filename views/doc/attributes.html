@@ -1,0 +1,122 @@
+<h3>
+<a name="attributes" class="anchor" href="#attributes"><span class="octicon octicon-link"></span></a>Attributes</h3>
+
+<p>Methods for getting and modifying attributes.</p>
+
+<h4>
+<a name="attr-name-value-" class="anchor" href="#attr-name-value-"><span class="octicon octicon-link"></span></a>.attr( name, value )</h4>
+
+<p>Method for getting and setting attributes. Gets the attribute value for only the first element in the matched set. If you set an attribute's value to <code>null</code>, you remove that attribute. You may also pass a <code>map</code> and <code>function</code> like jQuery.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span>
+<span class="c1">//=&gt; fruits</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'favorite'</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; &lt;li class="apple" id="favorite"&gt;Apple&lt;/li&gt;</span>
+</pre></div>
+
+<blockquote>
+<p>See <a href="http://api.jquery.com/attr/">http://api.jquery.com/attr/</a> for more information</p>
+</blockquote>
+
+<h4>
+<a name="data-name-value-" class="anchor" href="#data-name-value-"><span class="octicon octicon-link"></span></a>.data( name, value )</h4>
+
+<p>Method for getting and setting data attributes. Gets or sets the data attribute value for only the first element in the matched set. </p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;div data-apple-color="red"&gt;&lt;/div&gt;'</span><span class="p">).</span><span class="nx">data</span><span class="p">()</span>
+<span class="c1">//=&gt; { appleColor: 'red' }</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;div data-apple-color="red"&gt;&lt;/div&gt;'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'data-apple-color'</span><span class="p">)</span>
+<span class="c1">//=&gt; 'red'</span>
+
+<span class="kd">var</span> <span class="nx">apple</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'kind'</span><span class="p">,</span> <span class="s1">'mac'</span><span class="p">)</span>
+<span class="nx">apple</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">'kind'</span><span class="p">)</span>
+<span class="c1">//=&gt; 'mac'</span>
+</pre></div>
+
+<blockquote>
+<p>See <a href="http://api.jquery.com/data/">http://api.jquery.com/data/</a> for more information</p>
+</blockquote>
+
+<h4>
+<a name="val-value-" class="anchor" href="#val-value-"><span class="octicon octicon-link"></span></a>.val( [value] )</h4>
+
+<p>Method for getting and setting the value of input, select, and textarea. Note: Support for <code>map</code>, and <code>function</code> has not been added yet.</p>
+
+<pre><code>$('input[type="text"]').val()
+=&gt; input_text
+
+$('input[type="text"]').val('test').html()
+=&gt; &lt;input type="text" value="test"/&gt;
+</code></pre>
+
+<h4>
+<a name="removeattr-name-" class="anchor" href="#removeattr-name-"><span class="octicon octicon-link"></span></a>.removeAttr( name )</h4>
+
+<p>Method for removing attributes by <code>name</code>.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s1">'class'</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; &lt;li&gt;Pear&lt;/li&gt;</span>
+</pre></div>
+
+<h4>
+<a name="hasclass-classname-" class="anchor" href="#hasclass-classname-"><span class="octicon octicon-link"></span></a>.hasClass( className )</h4>
+
+<p>Check to see if <em>any</em> of the matched elements have the given <code>className</code>.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">'pear'</span><span class="p">)</span>
+<span class="c1">//=&gt; true</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'apple'</span><span class="p">).</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">'fruit'</span><span class="p">)</span>
+<span class="c1">//=&gt; false</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">'pear'</span><span class="p">)</span>
+<span class="c1">//=&gt; true</span>
+</pre></div>
+
+<h4>
+<a name="addclass-classname-" class="anchor" href="#addclass-classname-"><span class="octicon octicon-link"></span></a>.addClass( className )</h4>
+
+<p>Adds class(es) to all of the matched elements. Also accepts a <code>function</code> like jQuery.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'fruit'</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; &lt;li class="pear fruit"&gt;Pear&lt;/li&gt;</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'fruit red'</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; &lt;li class="apple fruit red"&gt;Apple&lt;/li&gt;</span>
+</pre></div>
+
+<blockquote>
+<p>See <a href="http://api.jquery.com/addClass/">http://api.jquery.com/addClass/</a> for more information.</p>
+</blockquote>
+
+<h4>
+<a name="removeclass-classname-" class="anchor" href="#removeclass-classname-"><span class="octicon octicon-link"></span></a>.removeClass( [className] )</h4>
+
+<p>Removes one or more space-separated classes from the selected elements. If no <code>className</code> is defined, all classes will be removed. Also accepts a <code>function</code> like jQuery.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">'pear'</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; &lt;li class=""&gt;Pear&lt;/li&gt;</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'red'</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">().</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; &lt;li class=""&gt;Apple&lt;/li&gt;</span>
+</pre></div>
+
+<blockquote>
+<p>See <a href="http://api.jquery.com/removeClass/">http://api.jquery.com/removeClass/</a> for more information.</p>
+</blockquote>
+
+<h4>
+<a name="is-selector-" class="anchor" href="#is-selector-"><span class="octicon octicon-link"></span></a>.is( selector )</h4>
+
+<h4>
+<a name="is-element-" class="anchor" href="#is-element-"><span class="octicon octicon-link"></span></a>.is( element )</h4>
+
+<h4>
+<a name="is-selection-" class="anchor" href="#is-selection-"><span class="octicon octicon-link"></span></a>.is( selection )</h4>
+
+<h4>
+<a name="is-functionindex-" class="anchor" href="#is-functionindex-"><span class="octicon octicon-link"></span></a>.is( function(index) )</h4>
+
+<p>Checks the current list of elements and returns <code>true</code> if <em>any</em> of the elements match the selector. If using an element or Cheerio selection, returns <code>true</code> if <em>any</em> of the elements match. If using a predicate function, the function is executed in the context of the selected element, so <code>this</code> refers to the current element.</p>

@@ -1,0 +1,21 @@
+<h3>
+<a name="selectors" class="anchor" href="#selectors"><span class="octicon octicon-link"></span></a>Selectors</h3>
+
+<p>Harvest's selector implementation is nearly identical to jQuery's, so the API is very similar.</p>
+
+<h4>
+<a name="-selector-context-root-" class="anchor" href="#-selector-context-root-"><span class="octicon octicon-link"></span></a>$( selector, [context], [root] )</h4>
+
+<p><code>selector</code> searches within the <code>context</code> scope which searches within the <code>root</code> scope. <code>selector</code> and <code>context</code> can be an string expression, DOM Element, array of DOM elements, or cheerio object. <code>root</code> is typically the HTML document string.</p>
+
+<p>This selector method is the starting point for traversing and manipulating the document. Like jQuery, it's the primary method for selecting elements in the document, but unlike jQuery it's built on top of the CSSSelect library, which implements most of the Sizzle selectors.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">,</span> <span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>
+<span class="c1">//=&gt; Apple</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'ul .pear'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'class'</span><span class="p">)</span>
+<span class="c1">//=&gt; pear</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'li[class=orange]'</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; &lt;li class="orange"&gt;Orange&lt;/li&gt;</span>
+</pre></div>

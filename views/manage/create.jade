@@ -1,0 +1,62 @@
+form(id="create_form", action="/create" ,method="post")
+  .grid.span6
+    .row
+      .span2(style="line-height: 30px;")
+        h3 template name
+      .span4.input-control.text
+        input(name="name", type="text",required="required")
+    .row
+      .span2(style="line-height: 30px;")
+        h3 simple url
+      .span4.input-control.text
+        input(name="simple_url", type="url", required="required")
+    .row
+      .span2(style="line-height: 30px;")
+        h3 Group
+      .span4.input-control.select
+        select(name="group")
+          each group in groups
+            option #{group.name}
+    .row
+      .span2(style="line-height: 30px;")
+        h3 Sub Group
+      .span4.input-control.select
+        select(name="subgroup")
+          each group in groups
+            optgroup(label=group.name)
+              each subgroup in group.subgroup
+                option #{subgroup}
+
+    .row
+      .span2(style="line-height: 30px;")
+        h3 page encoding
+      .span4.input-control.select
+        select(name="ie")
+          option utf8
+    .row
+      .span2(style="line-height: 30px;")
+        h3 page type
+      .span4.input-control.select
+        select(name="pageType")
+          option(value="html") html
+          option(value="json") json
+
+    .row(style="display: none")
+      h3 Code
+      .input-control.textarea
+        textarea(name="code", placeholder="Input text here...", required="required")
+    .row
+      h3 description
+      .input-control.textarea
+        textarea(name="description", placeholder="Input text here...")
+    .row
+      h3 authors&nbsp;&nbsp;
+        small (please use "," split names)
+      .input-control.textarea
+        textarea(name="authors", placeholder="Input text here...")
+    .row
+      label.input-control.switch
+        input(name="available", id="code_mode", type="checkbox")
+        span.helper available
+    .row(style="display: none")
+      input(type="submit",value="Submit")

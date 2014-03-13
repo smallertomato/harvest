@@ -1,0 +1,56 @@
+/*html, body
+{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+html, button, input, select, textarea
+{
+  font-family:'Segoe UI Semilight', 'Open Sans', Verdana, Arial, Helvetica, sans-serif 
+}*/
+html, body
+{
+  margin: 0;      /* Remove body margin/padding */
+  padding: 0;
+  #overflow: hidden; /* Remove scroll bars on browser window */
+}
+.ui-state-default { background-color: #88c }
+.ui-state-hover { background-color: #bbf }
+.ui-state-highlight { background-color: #68f }
+.ui-state-error { background-color: #eaa }
+
+.splitter-pane {
+  overflow: auto;
+}
+.splitter-bar-vertical {
+  width: 6px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.splitter-bar-horizontal {
+  height: 6px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.splitter-bar-vertical-docked {
+  width: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.splitter-bar.ui-state-highlight {
+  opacity: 0.7;
+}
+.splitter-iframe-hide {
+  visibility: hidden;
+}
+
+
+#TopPane {        /* Top nested in left pane */
+  height: 60%;    /* Initial height */
+  min-height: 75px; /* Minimum height */
+}
+#BottomPane {
+  height: 30%;
+  background: #eef;
+  min-height: 100px;
+}

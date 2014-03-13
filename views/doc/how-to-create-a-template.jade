@@ -1,0 +1,23 @@
+<article class="markdown-body entry-content" itemprop="mainContentOfPage">
+<h1>
+    <a name="cheerio-" class="anchor" href="#cheerio-"><span class="octicon octicon-link"></span></a>cheerio
+</h1>
+
+<h2>
+    <a name="introduction" class="anchor" href="#introduction">
+        <span class="octicon octicon-link"></span>
+    </a>
+    Introduction
+</h2>
+
+<p>Teach your server HTML.</p>
+
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">cheerio</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cheerio'</span><span class="p">),</span>
+    <span class="nx">$</span> <span class="o">=</span> <span class="nx">cheerio</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s1">'&lt;h2 class="title"&gt;Hello world&lt;/h2&gt;'</span><span class="p">);</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'h2.title'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">'Hello there!'</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'h2'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'welcome'</span><span class="p">);</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">();</span>
+<span class="c1">//=&gt; &lt;h2 class="title welcome"&gt;Hello there!&lt;/h2&gt;</span>
+</pre></div>

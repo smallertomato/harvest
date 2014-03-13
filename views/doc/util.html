@@ -1,0 +1,62 @@
+<h3>
+<a name="rendering" class="anchor" href="#rendering"><span class="octicon octicon-link"></span></a>Rendering</h3>
+
+<p>When you're ready to render the document, you can use the <code>html</code> utility function:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt;  &lt;ul id="fruits"&gt;</span>
+<span class="c1">//      &lt;li class="apple"&gt;Apple&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="orange"&gt;Orange&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="pear"&gt;Pear&lt;/li&gt;</span>
+<span class="c1">//    &lt;/ul&gt;</span>
+</pre></div>
+
+<p>If you want to return the outerHTML you can use <code>$.html(selector)</code>:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">)</span>
+<span class="c1">//=&gt; &lt;li class="pear"&gt;Pear&lt;/li&gt;</span>
+</pre></div>
+
+<h3>
+<a name="miscellaneous" class="anchor" href="#miscellaneous"><span class="octicon octicon-link"></span></a>Miscellaneous</h3>
+
+<p>DOM element methods that don't fit anywhere else</p>
+
+<h4>
+<a name="toarray" class="anchor" href="#toarray"><span class="octicon octicon-link"></span></a>.toArray()</h4>
+
+<p>Retrieve all the DOM elements contained in the jQuery set, as an array.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">toArray</span><span class="p">()</span>
+<span class="c1">//=&gt; [ {...}, {...}, {...} ]</span>
+</pre></div>
+
+<h4>
+<a name="clone" class="anchor" href="#clone"><span class="octicon octicon-link"></span></a>.clone()</h4>
+
+<p>Clone the harvest object.</p>
+
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">moreFruit</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">clone</span><span class="p">()</span>
+</pre></div>
+
+<h3>
+<a name="utilities" class="anchor" href="#utilities"><span class="octicon octicon-link"></span></a>Utilities</h3>
+
+<h4>
+<a name="root" class="anchor" href="#root"><span class="octicon octicon-link"></span></a>$.root</h4>
+
+<p>Sometimes you need to work with the top-level root element. To query it, you can use <code>$.root()</code>.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">root</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s1">'&lt;ul id="vegetables"&gt;&lt;/ul&gt;'</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span>
+<span class="c1">//=&gt; &lt;ul id="fruits"&gt;...&lt;/ul&gt;&lt;ul id="vegetables"&gt;&lt;/ul&gt;</span>
+</pre></div>
+
+<h4>
+<a name="contains-container-contained-" class="anchor" href="#contains-container-contained-"><span class="octicon octicon-link"></span></a>$.contains( container, contained )</h4>
+
+<p>Checks to see if the <code>contained</code> DOM element is a descendent of the <code>container</code> DOM element.</p>
+
+<h4>
+<a name="parsehtml-data--context---keepscripts--" class="anchor" href="#parsehtml-data--context---keepscripts--"><span class="octicon octicon-link"></span></a>$.parseHTML( data [, context ] [, keepScripts ] )</h4>
+
+<p>Parses a string into an array of DOM nodes. The <code>context</code> argument has no meaning for harvest, but it is maintained for API compatability.</p>

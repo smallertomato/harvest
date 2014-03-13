@@ -1,0 +1,32 @@
+<script src="/lib/console/libs/underscore.min.js"></script>
+<script src="/lib/console/libs/backbone.min.js"></script>
+<script src="/lib/console/libs/backbone-localStorage.min.js"></script><!-- opt -->
+<script src="/lib/console/sandbox-console.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        // Create the sandbox, with `iframe` mode on:
+    //     window.sandbox = new Sandbox.View({
+    //         model : new Sandbox.Model({ iframe : true }),
+    //         el : $('#sandbox')
+    //     });
+
+    //     // Pre-load your libraries for the iframe:
+    //     sandbox.model.load('lib/jquery-2.0.3.min.js');
+    //     // You can also evaluate code inside the iframe after it loads:
+    //     sandbox.model.iframeEval("var globalJoss = 'im global, bro'"); // globalJoss is now available in the iframe
+    // });
+    // Create the sandbox:
+        window.sandbox = new Sandbox.View({
+            // these two are required:
+            model : new Sandbox.Model(), // see below for more
+            el : $('#sandbox'), // or etc.
+            
+            // these are optional (defaults are given here):
+            resultPrefix : "  => ",
+            helpText : "type javascript commands into the console, hit enter to evaluate. \n[up/down] to scroll through history, ':clear' to reset it. \n[alt + return/up/down] for returns and multi-line editing.",
+            tabCharacter : "\t",
+            placeholder : "// type some javascript and hit enter (:help for info)"
+        });
+    
+    });
+</script>

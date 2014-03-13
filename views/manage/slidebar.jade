@@ -1,0 +1,9 @@
+ul(style="overflow: visible;")
+  each group in groups
+    li.sticker.sticker-color-pink.dropdown.active(data-role="dropdown")
+        a
+          i.icon-list #{group.name}
+        ul.sub-menu.light.sidebar-dropdown-menu.keep-opened.open(style="display: block;")
+          each subgroup in group.subgroup
+            li
+              a(href="#{subgroup}", data-group="#{group.name}") #{subgroup}

@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	(function () {
+	  var v13 = $.noConflict(true);
+	  window.v13 = v13;
+	})();
+	var title = "#{title}";
+</script>
+<!-- The sandbox template -->
+<script type="text/template" id="tplSandbox">
+	<pre class="output"></pre>
+	<div class="input">
+		<textarea rows="1" placeholder="<%= placeholder %>"></textarea>
+	</div>
+</script>
+
+<!-- The command/result template (NB whitespace/line breaks matter inside <pre> tag): -->
+<script type="text/template" id="tplCommand"><% if (! _hidden) { %><span class="command"><%= command %></span>
+<span class="prefix"><%= this.resultPrefix %></span><span class="<%= _class %>"><%= result %></span>
+<% } %></script>

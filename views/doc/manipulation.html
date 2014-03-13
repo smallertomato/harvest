@@ -1,0 +1,130 @@
+<h3>
+<a name="manipulation" class="anchor" href="#manipulation"><span class="octicon octicon-link"></span></a>Manipulation</h3>
+
+<p>Methods for modifying the DOM structure.</p>
+
+<h4>
+<a name="append-content-content--" class="anchor" href="#append-content-content--"><span class="octicon octicon-link"></span></a>.append( content, [content, ...] )</h4>
+
+<p>Inserts content as the <em>last</em> child of each of the selected elements.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'&lt;li class="plum"&gt;Plum&lt;/li&gt;'</span><span class="p">)</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt;  &lt;ul id="fruits"&gt;</span>
+<span class="c1">//      &lt;li class="apple"&gt;Apple&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="orange"&gt;Orange&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="pear"&gt;Pear&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="plum"&gt;Plum&lt;/li&gt;</span>
+<span class="c1">//    &lt;/ul&gt;</span>
+</pre></div>
+
+<h4>
+<a name="prepend-content-content--" class="anchor" href="#prepend-content-content--"><span class="octicon octicon-link"></span></a>.prepend( content, [content, ...] )</h4>
+
+<p>Inserts content as the <em>first</em> child of each of the selected elements.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s1">'&lt;li class="plum"&gt;Plum&lt;/li&gt;'</span><span class="p">)</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt;  &lt;ul id="fruits"&gt;</span>
+<span class="c1">//      &lt;li class="plum"&gt;Plum&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="apple"&gt;Apple&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="orange"&gt;Orange&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="pear"&gt;Pear&lt;/li&gt;</span>
+<span class="c1">//    &lt;/ul&gt;</span>
+</pre></div>
+
+<h4>
+<a name="after-content-content--" class="anchor" href="#after-content-content--"><span class="octicon octicon-link"></span></a>.after( content, [content, ...] )</h4>
+
+<p>Insert content next to each element in the set of matched elements.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">).</span><span class="nx">after</span><span class="p">(</span><span class="s1">'&lt;li class="plum"&gt;Plum&lt;/li&gt;'</span><span class="p">)</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt;  &lt;ul id="fruits"&gt;</span>
+<span class="c1">//      &lt;li class="apple"&gt;Apple&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="plum"&gt;Plum&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="orange"&gt;Orange&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="pear"&gt;Pear&lt;/li&gt;</span>
+<span class="c1">//    &lt;/ul&gt;</span>
+</pre></div>
+
+<h4>
+<a name="before-content-content--" class="anchor" href="#before-content-content--"><span class="octicon octicon-link"></span></a>.before( content, [content, ...] )</h4>
+
+<p>Insert content previous to each element in the set of matched elements.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.apple'</span><span class="p">).</span><span class="nx">before</span><span class="p">(</span><span class="s1">'&lt;li class="plum"&gt;Plum&lt;/li&gt;'</span><span class="p">)</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt;  &lt;ul id="fruits"&gt;</span>
+<span class="c1">//      &lt;li class="plum"&gt;Plum&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="apple"&gt;Apple&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="orange"&gt;Orange&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="pear"&gt;Pear&lt;/li&gt;</span>
+<span class="c1">//    &lt;/ul&gt;</span>
+</pre></div>
+
+<h4>
+<a name="remove-selector-" class="anchor" href="#remove-selector-"><span class="octicon octicon-link"></span></a>.remove( [selector] )</h4>
+
+<p>Removes the set of matched elements from the DOM and all their children. <code>selector</code> filters the set of matched elements to be removed.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt;  &lt;ul id="fruits"&gt;</span>
+<span class="c1">//      &lt;li class="apple"&gt;Apple&lt;/li&gt;</span>
+<span class="c1">//      &lt;li class="orange"&gt;Orange&lt;/li&gt;</span>
+<span class="c1">//    &lt;/ul&gt;</span>
+</pre></div>
+
+<h4>
+<a name="replacewith-content-" class="anchor" href="#replacewith-content-"><span class="octicon octicon-link"></span></a>.replaceWith( content )</h4>
+
+<p>Replaces matched elements with <code>content</code>.</p>
+
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">plum</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;li class="plum"&gt;Plum&lt;/li&gt;'</span><span class="p">)</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.pear'</span><span class="p">).</span><span class="nx">replaceWith</span><span class="p">(</span><span class="nx">plum</span><span class="p">)</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; &lt;ul id="fruits"&gt;</span>
+<span class="c1">//     &lt;li class="apple"&gt;Apple&lt;/li&gt;</span>
+<span class="c1">//     &lt;li class="orange"&gt;Orange&lt;/li&gt;</span>
+<span class="c1">//     &lt;li class="plum"&gt;Plum&lt;/li&gt;</span>
+<span class="c1">//   &lt;/ul&gt;</span>
+</pre></div>
+
+<h4>
+<a name="empty" class="anchor" href="#empty"><span class="octicon octicon-link"></span></a>.empty()</h4>
+
+<p>Empties an element, removing all it's children.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">).</span><span class="nx">empty</span><span class="p">()</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt;  &lt;ul id="fruits"&gt;&lt;/ul&gt;</span>
+</pre></div>
+
+<h4>
+<a name="html-htmlstring-" class="anchor" href="#html-htmlstring-"><span class="octicon octicon-link"></span></a>.html( [htmlString] )</h4>
+
+<p>Gets an html content string from the first selected element. If <code>htmlString</code> is specified, each selected element's content is replaced by the new content.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; Orange</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#fruits'</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">'&lt;li class="mango"&gt;Mango&lt;/li&gt;'</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span>
+<span class="c1">//=&gt; &lt;li class="mango"&gt;Mango&lt;/li&gt;</span>
+</pre></div>
+
+<h4>
+<a name="text-textstring-" class="anchor" href="#text-textstring-"><span class="octicon octicon-link"></span></a>.text( [textString] )</h4>
+
+<p>Get the combined text contents of each element in the set of matched elements, including their descendants.. If <code>textString</code> is specified, each selected element's content is replaced by the new text content.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.orange'</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>
+<span class="c1">//=&gt; Orange</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span>
+<span class="c1">//=&gt;  Apple</span>
+<span class="c1">//    Orange</span>
+<span class="c1">//    Pear</span>
+</pre></div>
+
+

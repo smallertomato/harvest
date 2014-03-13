@@ -1,0 +1,23 @@
+include header.jade
+link(href="/css/index.css",rel="stylesheet")
+link(href="/css/manage.css",rel="stylesheet")  
+link(href="/css/common.css",rel="stylesheet")
+style.
+  .nav-bar {
+    background-color:#3D6AA2 !important;
+  }
+script.
+  window.jade = {};
+  jade.group = '#{group}';
+  jade.subgroup = '#{subgroup}';
+body.metrouicss
+  include nav
+  .page.with-sidebar
+    .page-header
+    .page-sidebar
+      include manage/slidebar.jade
+    .page-region
+      .page-region-content
+script(src="/lib/metro/javascript/slider.js")
+script(src="/lib/metro/javascript/dialog.js")
+script(src="/js/manage.js")

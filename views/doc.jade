@@ -1,0 +1,22 @@
+include header.jade
+link(href="/css/index.css",rel="stylesheet")
+link(href="/css/doc.css",rel="stylesheet")
+link(href="/css/preview.css",rel="stylesheet")
+link(href="/css/common.css",rel="stylesheet")
+style.
+  .nav-bar {
+    background-color:#3D6AA2 !important;
+  }
+script.
+  window.jade = {};
+  jade.article = '#{article}';
+body.metrouicss
+  include nav
+  .page.with-sidebar
+    .page-header
+    .page-sidebar
+      include doc/slidebar.html
+    .page-region
+      .page-region-content.stackeditor-preview
+script(src="/lib/metro/javascript/slider.js")
+script(src="/js/doc.js")

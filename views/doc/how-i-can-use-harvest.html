@@ -1,0 +1,92 @@
+<h1 class="wmd-title" id="developer-guide">Developer guide</h1>
+
+<h2 class="wmd-title" id="getting-started">Getting started</h2>
+
+<p>解析服务提供了四种接口，其中三个基于http的，分别为<a href="#1"><code>/http</code></a> <a href="#2"><code>/ftp</code></a> <a href="#3"><code>/url</code></a>,  他们主要根据数据来源划分。另外一种是基于thrift的远程调用方式。</p>
+
+<h4 class="wmd-title" id="http-method"><a name="#1">Http Method</a></h4>
+
+<ul>
+<li><p>Host</p>
+
+<pre><code>10.46.126.36:8765
+</code></pre></li>
+<li><p>method</p>
+
+<pre><code>POST
+</code></pre></li>
+<li><p>post params:</p>
+
+<pre><code>(1) tid    [string] [required]      eg:525ff8934fde442268000004
+
+(2) html   [string] [required]      eg:&lt;div&gt;harvest&lt;/div&gt;
+
+(3) render [string] [not required]  eg:true
+
+(4) params [string] [not required]  eg:{"basepos": 10}
+</code></pre>
+
+<blockquote>
+  <p><strong>NOTE:</strong> 高级参数：params 是用来向模板中注入变量的，例如用basepos来确定此页结果是从几个开始 ；params的值是json string，务必确保传入的值能够被<code>JSON.parse（）</code>处理，否则可能导致解析失败</p>
+</blockquote></li>
+</ul>
+
+<h4 class="wmd-title" id="url-method"><a name="#2">Url Method</a></h4>
+
+<ul>
+<li><p>Host</p>
+
+<pre><code>10.46.126.36:8765
+</code></pre></li>
+<li><p>method</p>
+
+<pre><code>POST|GET
+</code></pre></li>
+<li><p>post params:</p>
+
+<pre><code>(1) tid    [string]  [required]      eg:525ff8934fde442268000004
+
+(2) url    [string]  [required]      eg:http%3A//www.baidu.com
+
+(3) render [string]  [not required]  eg:true
+</code></pre>
+
+<blockquote>
+  <p><strong>NOTE:</strong> 如果用GET方式请求，请注意编码特殊字符（eg： url_encode or escape）</p>
+</blockquote></li>
+</ul>
+
+<h4 class="wmd-title" id="ftp-method"><a name="#3">Ftp Method</a></h4>
+
+<ul>
+<li><p>Host</p>
+
+<pre><code>10.46.126.36:8765
+</code></pre></li>
+<li><p>method</p>
+
+<pre><code>POST|GET
+</code></pre></li>
+<li><p>post params:</p>
+
+<pre><code>(1) tid    [string]  [required]      eg:525ff8934fde442268000004
+
+(2) host   [string]  [required]      eg:cq01-2011q4-setest2-2.vm.baidu.com
+
+(3) render [string]  [not required]  eg:true
+
+(4) path   [string]  [required]      eg:/home/work/pages/1.htm;
+</code></pre>
+
+<blockquote>
+  <p><strong>NOTE:</strong> </p>
+</blockquote></li>
+</ul>
+
+<h4 class="wmd-title" id="thrift-method"><a name="#4">Thrift Method</a></h4>
+
+<blockquote>
+  <p><strong>NOTE:</strong> TODO </p>
+</blockquote>
+
+<hr>

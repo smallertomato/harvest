@@ -1,0 +1,35 @@
+include header.jade
+link(href="/css/editor.css",rel="stylesheet")
+link(href="/css/common.css",rel="stylesheet")
+link(href="/lib/console/sandbox.css", rel="stylesheet")
+link(href="/lib/ace/css/editor.css", rel="stylesheet")
+
+script(src="/lib/jquery.js")
+
+script(src="/socket.io/socket.io.js")
+include editor/proload.html
+body.metrouicss
+  include editor/nav-4-editor
+  #Splitter
+    #LeftPane.page(style="width: auto; overflow: hidden;")
+      #TopPane
+        #editor(style="height: 100%; width: 100%; font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace !important;")
+      #BottomPane
+        #sandbox sandbox loading...
+    #RightPane
+      #frame_container(style="height: 100%; width: 100%;overflow: hidden;")
+include editor/afterload.html
+script(src="/lib/splitter.js")
+script(src="/lib/jquery.cookie.js")
+script(src="/lib/ace/ace.js")
+script(src="/lib/metro/javascript/dropdown.js")
+script.
+  window.jade = {};
+  jade.url = "#{url}";
+  jade.code = "#{code}"; 
+  jade.id = "#{id}";
+script(src="/js/layout.js")
+script(src="/js/navigation.js")
+script(src="/lib/metro/javascript/dialog.js")
+
+
