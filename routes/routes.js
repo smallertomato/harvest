@@ -71,7 +71,7 @@ module.exports = function (app) {
             req.pipe(request(parse[2] + "://" + parse[3] + "/" + req.params[0])).pipe(res)
             */
         } else {
-            logger.info("'Sorry, we cannot find that! " + parse[2] + "://" + parse[3] + "/" + req.params[0])
+            // logger.info("'Sorry, we cannot find that! " + parse[2] + "://" + parse[3] + "/" + req.params[0])
             res.send(404, 'Sorry, we cannot find that!');
         }
     });
