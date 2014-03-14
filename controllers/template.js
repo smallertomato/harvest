@@ -167,7 +167,7 @@ exports.manage = function (req, res){
         username = "public";
     }
 
-    req.app.get('model')('template_meta').find({}, function (err, docs) {
+    req.app.get('model')('templateMeta').find({}, function (err, docs) {
         if (err) {
             res.send(500, { error: 'something blew up' });
         } else {

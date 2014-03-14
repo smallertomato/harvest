@@ -6,7 +6,7 @@
 
 var async = require('async'),
     request = require('request'),
-    passport = require('cas_validate');
+    passport = require('cas');
 
 // Controllers
 var site = require(__basename + '/controllers/site')
@@ -58,6 +58,7 @@ module.exports = function (app) {
         logger.info("Proxy: " + req.cookies.proxy);
         // TODO: true is switch.
         if (false && url && req.cookies.proxy) {
+            /*
             var parse = url.match(/^(([a-z]+):\/\/)?([^\/\?#]+)\/*([^\?#]*)\??([^#]*)#?(\w*)$/i);  
             var result = {  
                 'schema': parse[2],  
@@ -68,6 +69,7 @@ module.exports = function (app) {
             };
             logger.info("Proxy: " + parse[2] + "://" + parse[3] + "/" + req.params[0])
             req.pipe(request(parse[2] + "://" + parse[3] + "/" + req.params[0])).pipe(res)
+            */
         } else {
             logger.info("'Sorry, we cannot find that! " + parse[2] + "://" + parse[3] + "/" + req.params[0])
             res.send(404, 'Sorry, we cannot find that!');

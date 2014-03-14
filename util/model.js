@@ -17,10 +17,10 @@ module.exports = function(app) {
             throw new Error('model name can not be empty!!');
             return false;
         }
-        if (!db.connection) {
+        if (!db) {
             throw new Error('database connection lost!');
             return false;
         }
-        return require(path)(db.connection);
+        return require(path)(db);
     };
 };

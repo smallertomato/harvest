@@ -12,11 +12,10 @@ module.exports = function (app, express) {
     var config = app.get('config'),
         redisStore = require('connect-redis')(express),
         path = require('path')
-        passport = require('cas_validate'),
+        passport = require('cas'),
         logger = app.get('logger');
 
     app.configure(function(){
-        app.use(express.logger());
         // should be placed before express.static
         app.use(express.compress({
             filter: function (req, res) {
@@ -43,6 +42,7 @@ module.exports = function (app, express) {
         app.use(passport.json_ticket(config.cas));
         app.use(passport.check_or_redirect(config.cas));
         app.use(express.errorHandler());
+        app.use(express.logger());
         logger.info('harvest run in production mode.');
     })
     // test env config

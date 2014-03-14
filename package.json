@@ -1,0 +1,41 @@
+{
+  "name": "harvest",
+  "version": "0.0.1",
+  "description": "HTML and JSON parse platfrom which can support data extracting and page reconfiguration",
+  "main": "app.js",
+  "dependencies": {
+    "jade": "~1.3.0",
+    "async": "~0.2.10",
+    "express": "~3.4.8",
+    "cheerio": "~0.13.1",
+    "connect-redis": "~1.5.0",
+    "hiredis": "~0.1.16",
+    "mongodb": "~1.3.23",
+    "mongoose": "~3.8.8",
+    "optimist": "~0.6.1",
+    "redis": "~0.10.1",
+    "request": "~2.34.0",
+    "socket.io": "~0.9.16",
+    "winston": "~0.7.2",
+    "xml2js": "~0.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/smallertomato/harvest.git"
+  },
+  "keywords": [
+    "HTML",
+    "JSON",
+    "parse",
+    "data",
+    "extracting"
+  ],
+  "author": "Chao Liu",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "3af28da29cb9f30a8fa837011f9533d43d0f352d"
+}

@@ -9,7 +9,7 @@
  */
 global.__basename = __dirname;
 // Load configurations
-var env = process.env.NODE_ENV || 'production'
+var env = process.env.NODE_ENV || 'development'
   , config = require(__basename + '/config/global')[env];
 
 /**
@@ -39,7 +39,9 @@ var app = express();
 
 app.set('config', config);
 app.set('logger', logger);
-var database = require(path.join(__basename, '/util/database.js'));
+
+var database = require(path.join(__basename, '/util/database.js'))(app);
+
 app.set('db', database);
 app.set('model', require(path.join(__basename, '/util/model.js'))(app));
 
